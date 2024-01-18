@@ -11,7 +11,23 @@ body{
 
 div{
     border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
+
+}
+
+#result{
+    margin: 20px;
+}
+
+
+#clear-delete{
+    margin: 20px;
+}
+
+#button-container{
+    background-color: #09203f;
+    display: grid;
+    grid-template-rows: 30px 30px 30px 30px;
+    grid-template-columns: 30px 30px 30px 30px;
+    margin: 20px;
 }
 
