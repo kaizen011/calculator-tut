@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    backdrop-filter: blur(10px); /* Add a blurry effect to the background */
+    
+}
+
+div{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
