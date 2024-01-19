@@ -10,7 +10,7 @@ body{
 }
 
 div{
-    border: 1px solid black;
+   border: 1px solid black;
 
 }
 
@@ -38,6 +38,8 @@ div{
     background-color: #09203f;
     /* height: 100vh; Adjust as needed */
     box-shadow:rgb(59, 63, 99);
+    transition: background-color 0.7s ease;
+    color: #ffffff;
 }
 
 #clear-delete{ 
@@ -50,7 +52,8 @@ div{
 
 
 .buttons:hover {
-    background-color: #15527a;
+    background-color: #80b0cf;
+    color: rgb(21, 103, 150);
   }
 
 .buttons::before {
@@ -63,3 +66,34 @@ div{
   .bright-hover:hover::before {
     opacity: 1;
   }
+
+
+.cldl{
+    background-color: #19283a;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.7s ease;
+}
+
+
+
+
+.cldl:hover{
+    color: rgb(35, 100, 138);
+    background-color: #a5cbe9;
+}
+
+
+#gameDiv{
+    background-image: linear-gradient(to top, #627794 0%, rgb(42, 47, 53) 100%);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+#result{
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px;
+    color:#f9fcff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right, #476691, rgb(42, 47, 53));
+}
