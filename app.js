@@ -8,17 +8,20 @@ const equalBtn = document.querySelector('.buttons.equal');
 resultDiv.textContent = '';
 
 let firstNum;
-let secondNum;
+let initialNum;
+
+
 
 
 buttons.forEach( function(button){
 
+
    button.addEventListener("click", function() {
+    resultDiv.textContent = '';
     if(!button.classList.contains('operand') && !button.classList.contains('equal'))
     {
         resultDiv.textContent += button.textContent;
-         firstNum = (parseFloat(resultDiv));
-         secondNum = (parseFloat(resultDiv));
+         firstNum = (parseFloat(resultDiv.textContent));
     }
    });
 
@@ -26,49 +29,92 @@ buttons.forEach( function(button){
 });
 
 
-console.log(firstNum);
-console.log(secondNum);
+
+    
+
+
+let currentResult;
+let operator;
+
 
 operandBtns.forEach( function(operandi){
     operandi.addEventListener("click", function() {
-         if(!operandi.classList.contains('equal')){
-            
+        resultDiv.textContent = '';
+        initialNum = firstNum;
+
+        if(!operandi.classList.contains('equal')){
+
             if(operandi.textContent == '+'){
-                resultDiv.textContent += operandi.textContent;
+                operator = '+'
+                resultDiv.textContent = '+';
+                
             }
             if(operandi.textContent == '-'){
-                resultDiv.textContent += operandi.textContent;
+                operator = '-'
+                resultDiv.textContent = '-';
+                
             }
 
             if(operandi.textContent == '*'){
-                resultDiv.textContent += operandi.textContent;
+                operator = '*'
+                resultDiv.textContent = '*';
+                
             }
 
             if(operandi.textContent == '/'){
-                resultDiv.textContent += operandi.textContent;
+                operator = '/'
+                resultDiv.textContent = '/';
+
             }
-
-
+            
 
          }
+
+
+
+         
     });
+    
  });
  
 
- equalBtn.addEventListener("click", function(){
-    if(operandi.textContent == '+'){
-        
+
+ function add(a,b){
+    return currentResult = a + b;
+ }
+ function subtract(a,b){
+    return  currentResult = a - b;
+ }
+ function multiply(a,b){
+    return currentResult = a * b;
+ }
+ function divide(a,b){
+    return currentResult = a / b;
+ }
+ 
+ 
+
+
+
+ equalBtn.addEventListener("click", function mathStuff(){
+    
+    if(operator == '+'){
+        resultDiv.textContent = add(firstNum,initialNum);
+        currentResult = add(firstNum,initialNum);
     }
-    if(operandi.textContent == '-'){
-        
+    if(operator == '-'){
+        resultDiv.textContent = subtract(firstNum,initialNum);
+        currentResult = subtract(firstNum,initialNum);
     }
 
-    if(operandi.textContent == '*'){
-        
+    if(operator == '*'){
+        resultDiv.textContent = multiply(firstNum,initialNum);
+        currentResult = multiply(firstNum,initialNum);
     }
 
-    if(operandi.textContent == '/'){
-        
+    if(operator == '/'){
+        resultDiv.textContent = divide(firstNum,initialNum);
+        currentResult = subtract(firstNum,initialNum);
     }
  });
 
