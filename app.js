@@ -133,6 +133,7 @@ const buttons = document.querySelectorAll('.buttons');
 const clearBtn = document.getElementById('clear');
 const operandBtns = document.querySelectorAll('.buttons.operand');
 const equalBtn = document.querySelector('.buttons.equal');
+const pointBtn = document.querySelector('.buttons.point');
 
 resultDiv.textContent = '';
 
@@ -154,6 +155,7 @@ buttons.forEach(function (button) {
 operandBtns.forEach(function (operandi) {
     operandi.addEventListener("click", function () {
         resultDiv.textContent = '';
+        pointBtn.style.visibility = 'visible'; 
         if (!operandi.classList.contains('equal')) {
             operator = operandi.textContent;
     
@@ -209,7 +211,11 @@ equalBtn.addEventListener("click", function mathStuff() {
         noDecimalResult = currentResult.toFixed(4)
         resultDiv.textContent = noDecimalResult;
     }
+    pointBtn.style.visibility = 'visible'; 
 });
+
+
+
 
 clearBtn.addEventListener("click", function () {
     resultDiv.textContent = '';
@@ -217,4 +223,11 @@ clearBtn.addEventListener("click", function () {
     initialNum = undefined;
     currentResult = undefined;
     operator = undefined;
+});
+
+
+
+
+pointBtn.addEventListener("click", function(){
+    pointBtn.style.visibility = 'hidden'; 
 });
