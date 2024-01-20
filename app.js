@@ -140,6 +140,7 @@ let firstNum;
 let initialNum;
 let currentResult;
 let operator;
+let noDecimalResult
 
 buttons.forEach(function (button) {
     button.addEventListener("click", function () {
@@ -155,6 +156,19 @@ operandBtns.forEach(function (operandi) {
         resultDiv.textContent = '';
         if (!operandi.classList.contains('equal')) {
             operator = operandi.textContent;
+    
+    if (operator == '+') {
+        initialNum = firstNum;
+    }
+    if (operator == '-') {
+        initialNum = firstNum;
+    }
+    if (operator == '*') {
+        initialNum = firstNum;
+    }
+    if (operator == '/') {
+        initialNum = firstNum;
+    }
         }
     });
 });
@@ -173,33 +187,27 @@ function divide(a, b) {
 }
 
 equalBtn.addEventListener("click", function mathStuff() {
-    // if (operator == '+') {
-    //     initialNum = firstNum;
-    // }
-    // if (operator == '-') {
-    //     initialNum = firstNum;
-    // }
-    // if (operator == '*') {
-    //     initialNum = firstNum;
-    // }
-    // if (operator == '/') {
-    //     initialNum = firstNum;
-    // }
-
-    initialNum = firstNum;
-
+   
 
     if (operator == '+') {
-        resultDiv.textContent = add(firstNum, initialNum);
+        currentResult = add(initialNum, firstNum)
+        noDecimalResult = currentResult.toFixed(4)
+        resultDiv.textContent = noDecimalResult;
     }
     if (operator == '-') {
-        resultDiv.textContent = subtract(initialNum, firstNum);
+        currentResult = subtract(initialNum, firstNum)
+        noDecimalResult = currentResult.toFixed(4)
+        resultDiv.textContent = noDecimalResult;
     }
     if (operator == '*') {
-        resultDiv.textContent = multiply(initialNum, firstNum);
+        currentResult = multiply(initialNum, firstNum)
+        noDecimalResult = currentResult.toFixed(4)
+        resultDiv.textContent = noDecimalResult;
     }
     if (operator == '/') {
-        resultDiv.textContent = divide(initialNum, firstNum);
+        currentResult = divide(initialNum, firstNum)
+        noDecimalResult = currentResult.toFixed(4)
+        resultDiv.textContent = noDecimalResult;
     }
 });
 
