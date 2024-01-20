@@ -223,6 +223,7 @@ clearBtn.addEventListener("click", function () {
     initialNum = undefined;
     currentResult = undefined;
     operator = undefined;
+    pointBtn.style.visibility = 'visible'; 
 });
 
 
